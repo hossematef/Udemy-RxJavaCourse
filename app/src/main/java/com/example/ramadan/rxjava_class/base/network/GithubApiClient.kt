@@ -1,4 +1,4 @@
-package com.example.ramadan.rxjava_class.network
+package com.example.ramadan.rxjava_class.base.network
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

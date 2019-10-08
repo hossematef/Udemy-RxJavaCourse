@@ -1,16 +1,11 @@
 package com.example.ramadan.rxjava_class
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.ramadan.rxjava_class.presentation.ui.ReposActivity
 import io.reactivex.Observable
-import io.reactivex.Observer
-import io.reactivex.disposables.Disposable
 import io.reactivex.functions.BiFunction
-import io.reactivex.subjects.AsyncSubject
-import io.reactivex.subjects.BehaviorSubject
-import io.reactivex.subjects.PublishSubject
-import io.reactivex.subjects.ReplaySubject
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import java.util.concurrent.TimeUnit
@@ -83,7 +78,7 @@ class MainActivity : AppCompatActivity() {
 
 
         myGithubStarsRepos.setOnClickListener {
-            startActivity(Intent(applicationContext,MyStarsRepos::class.java))
+            startActivity(Intent(applicationContext, ReposActivity::class.java))
         }
 
 
@@ -91,30 +86,30 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun showJustJob() {
-        val dataStream = Observable.just(10, 20, 30, 40)
-
-        val dataObserver = object : Observer<Int> {
-            override fun onComplete() {
-                println("All data is received .....")
-            }
-
-            override fun onSubscribe(d: Disposable?) {
-            }
-
-            override fun onNext(t: Int?) {
-                println("new data is received :" + t)
-            }
-
-            override fun onError(e: Throwable?) {
-
-                println("An ERROR is received" + e?.message)
-            }
-
-        }
-
-        dataStream.subscribe(dataObserver)
-    }
+//    private fun showJustJob() {
+//        val dataStream = Observable.just(10, 20, 30, 40)
+//
+//        val dataObserver = object : Observer<Int> {
+//            override fun onComplete() {
+//                println("All data is received .....")
+//            }
+//
+//            override fun onSubscribe(d: Disposable?) {
+//            }
+//
+//            override fun onNext(t: Int?) {
+//                println("new data is received :" + t)
+//            }
+//
+//            override fun onError(e: Throwable?) {
+//
+//                println("An ERROR is received" + e?.message)
+//            }
+//
+//        }
+//
+//        dataStream.subscribe(dataObserver)
+//    }
 
     private fun createFromArray(): Observable<Array<Int>> {
         return Observable.fromArray(arrayOf(1, 5, 7, 9))
@@ -221,49 +216,49 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun getFirstStudent(): Observer<String> {
-        return object : Observer<String> {
-            override fun onComplete() {
-                println("the lecture is ended")
-            }
+//    private fun getFirstStudent(): Observer<String> {
+//        return object : Observer<String> {
+//            override fun onComplete() {
+//                println("the lecture is ended")
+//            }
+//
+//
+//            override fun onSubscribe(d: Disposable?) {
+//            }
+//
+//            override fun onNext(t: String?) {
+//                println("first student >> our prof teach us about: " + t)
+//            }
+//
+//            override fun onError(e: Throwable?) {
+//                println("error")
+//            }
+//
+//        }
+//    }
 
 
-            override fun onSubscribe(d: Disposable?) {
-            }
-
-            override fun onNext(t: String?) {
-                println("first student >> our prof teach us about: " + t)
-            }
-
-            override fun onError(e: Throwable?) {
-                println("error")
-            }
-
-        }
-    }
-
-
-    private fun getLateStudent(): Observer<String> {
-        return object : Observer<String> {
-            override fun onComplete() {
-                println("the lecture is ended")
-
-            }
-
-
-            override fun onSubscribe(d: Disposable?) {
-            }
-
-            override fun onNext(t: String?) {
-                println("late student >> our prof teach us about: " + t)
-            }
-
-            override fun onError(e: Throwable?) {
-                println("error")
-            }
-
-        }
-    }
+//    private fun getLateStudent(): Observer<String> {
+//        return object : Observer<String> {
+//            override fun onComplete() {
+//                println("the lecture is ended")
+//
+//            }
+//
+//
+//            override fun onSubscribe(d: Disposable?) {
+//            }
+//
+//            override fun onNext(t: String?) {
+//                println("late student >> our prof teach us about: " + t)
+//            }
+//
+//            override fun onError(e: Throwable?) {
+//                println("error")
+//            }
+//
+//        }
+//    }
 
 
 }

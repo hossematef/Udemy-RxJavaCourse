@@ -3,10 +3,11 @@
     package="com.example.ramadan.rxjava_class">
 
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:name=".RxApp"
+        android:name=".base.RxApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -20,7 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MyStarsRepos"></activity>
+        <activity android:name=".presentation.ui.ReposActivity"></activity>
     </application>
 
 </manifest>
